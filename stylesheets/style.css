@@ -7,7 +7,7 @@ body {
 	background-color: #000;
 	background: url("../images/fog.png") no-repeat center center fixed;
 	background-size: cover;
-	max-height: 100vh;
+	/*max-height: 100vh;*/
 }
 
 ul {
@@ -20,16 +20,22 @@ li {
 
 a {
 	text-decoration: none;
+	font-weight: 100;
+	letter-spacing: .1em;
 }
 
-a:hover {
-	text-decoration: underline;
+p {
+
+	font-weight: 100;
+	letter-spacing: .1em;
 }
 
 .bg {
-	position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	background-color: #000;
 	opacity: .4;
 	z-index: -1;
@@ -46,7 +52,7 @@ a:hover {
 }
 
 .container {
-	height: 100vh;
+	min-height: 100vh;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -97,7 +103,8 @@ h1 {
 }
 
 .heading_top {
-	letter-spacing: 0.05em;
+	letter-spacing: 0.08em;
+	font-weight: 400;
 }
 
 .heading_bottom {
@@ -114,7 +121,8 @@ h1 {
 .link-container a {
 	font-size: 20px;
 	margin: 12px;
-	font-weight: 200;
+	font-weight: 100;
+	letter-spacing: .1em;
 }
 
 .contact {
@@ -123,6 +131,7 @@ h1 {
 }
 
 .work {
+	margin: 5vw 0;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -137,14 +146,14 @@ h1 {
 	overflow: hidden;
 	background-color: #fff;
 	width: 250px;
-	height: 220px;
+	height: 210px;
 	margin: 20px;
-	border: solid 2px #fff;
+	/*border: solid 2px #fff;*/
 	/*border-radius: 16px;*/
 }
 
 .project:hover .project-image {
-	opacity: .45;
+	opacity: .55;
 	transform: scale(1.05);
 }
 
@@ -158,7 +167,7 @@ h1 {
 	left: 0;
 	height: 100%;
 	width: 100%;
-	transition: .5s;
+	transition: .25s;
 	/*border-radius: 12px;*/
 }
 
@@ -168,5 +177,52 @@ h1 {
 	height: 70px;
 	width: 70px;
 	opacity: 0;
-	transition: .5s;
+	/*transition: .5s;*/
+}
+
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #fff;
+  height: 1px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 1024px){
+  	.link-image {
+  		opacity: 1;
+  	}
+
+  	.project-image {
+  		opacity: .65;
+  		/*border: 2px solid #000;*/
+  	}
+
+  	.project {
+  		border: 4px solid #000;
+  	}
 }
