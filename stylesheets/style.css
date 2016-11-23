@@ -5,7 +5,7 @@
 
 body {
 	background-color: #000;
-	background: url("../images/fog.png") no-repeat center center fixed;
+	background: url("images/fog.png") no-repeat center center fixed;
 	background-size: cover;
 	/*max-height: 100vh;*/
 }
@@ -38,6 +38,7 @@ p {
 	height: 100%;
 	background-color: #000;
 	opacity: .4;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
 	z-index: -1;
 }
 
@@ -54,27 +55,44 @@ p {
 .container {
 	min-height: 100vh;
 	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 
 .content {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
 
 .color_box {
 	width: 65vw;
 	height: 25vw;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
 	/*overflow: hidden;*/
 }
 
 .left_bin {
 	height: 25vw;
 	width: 25vw;
+	background: -webkit-linear-gradient(top left, #aaf, #fa8);
 	background: linear-gradient(to bottom right, #aaf, #fa8);
 	/*float: left;*/
 }
@@ -92,6 +110,7 @@ p {
 	width: 40vw;
 	height: 13vw;
 	/*float: right;*/
+	background: -webkit-linear-gradient(top left, #9e6, #8ff);
 	background: linear-gradient(to bottom right, #9e6, #8ff);
 }
 
@@ -114,8 +133,12 @@ h1 {
 }
 
 .link-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 .link-container a {
@@ -132,16 +155,27 @@ h1 {
 
 .work {
 	margin: 5vw 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	max-width: 882px;
 }
 
 .project {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	position: relative;
 	overflow: hidden;
 	background-color: #fff;
@@ -154,11 +188,14 @@ h1 {
 
 .project:hover .project-image {
 	opacity: .65;
-	transform: scale(1.05);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+	-webkit-transform: scale(1.05);
+	        transform: scale(1.05);
 }
 
 .project:hover .link-image {
 	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 .project-image {
@@ -167,6 +204,7 @@ h1 {
 	left: 0;
 	height: 100%;
 	width: 100%;
+	-webkit-transition: .25s;
 	transition: .25s;
 	/*border-radius: 12px;*/
 }
@@ -177,48 +215,23 @@ h1 {
 	height: 70px;
 	width: 70px;
 	opacity: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	/*transition: .5s;*/
 }
 
-.hvr-underline-from-center {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  position: relative;
-  overflow: hidden;
-}
-.hvr-underline-from-center:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 50%;
-  right: 50%;
-  bottom: 0;
-  background: #fff;
-  height: 1px;
-  -webkit-transition-property: left, right;
-  transition-property: left, right;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
-  left: 0;
-  right: 0;
-}
+
 
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 1024px){
   	.link-image {
   		opacity: 1;
+  		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   	}
 
   	.project-image {
   		opacity: .65;
+  		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
   		/*border: 2px solid #000;*/
   	}
 
@@ -232,7 +245,10 @@ h1 {
   and (orientation: portrait) {
   	.color_box {
   		height: 55vw;
-  		flex-direction: column;
+  		-webkit-box-orient: vertical;
+  		-webkit-box-direction: normal;
+  		    -ms-flex-direction: column;
+  		        flex-direction: column;
   	}
 
   	.left_bin {
@@ -258,4 +274,4 @@ h1 {
 	.link-container a {
 		font-size: 12px;
 	}
-}
+  }
